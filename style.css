@@ -3,10 +3,10 @@
 
 :root {
     --primary-color: #0d2137; 
-    --secondary-color: #FFC107; 
+    --secondary-color: #FFC300; /* Amarelo mais vibrante */
     --background-light: #ffffff;
     --background-dark: #1a1a1a;
-    --text-color-light: #f0f0f0; 
+    --text-color-light: #FFFFFF; /* Texto branco puro para mais contraste */
     --text-color-dark: #333333; 
     --link-hover-color: #FFD54F;
     --header-height: 80px;
@@ -115,6 +115,7 @@ nav a:hover {
     color: var(--secondary-color);
     line-height: 1.2;
     text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para destacar o texto */
 }
 
 #hero-banner p {
@@ -152,8 +153,12 @@ nav a:hover {
     color: var(--text-color-light);
 }
 
-.dark-bg h2, .dark-bg h3 {
-    color: var(--secondary-color);
+.dark-bg h2, .dark-bg h3, .dark-bg h4 {
+    color: var(--secondary-color); /* Títulos e subtítulos em amarelo */
+}
+
+.dark-bg strong {
+    color: var(--secondary-color); /* Palavras em negrito em amarelo */
 }
 
 .content-section h2 {
@@ -180,7 +185,6 @@ nav a:hover {
     margin-bottom: 0.5rem;
     color: var(--primary-color);
 }
-
 
 .content-section p, .content-section ul, .content-section ol {
     margin-bottom: 1.5rem;
@@ -241,7 +245,6 @@ tbody tr:nth-of-type(even) {
     background-color: #333;
 }
 
-
 .risk-unacceptable { background-color: #ffdddd !important; }
 .risk-tolerable { background-color: #fffbdd !important; }
 .risk-acceptable { background-color: #ddffdd !important; }
@@ -249,7 +252,6 @@ tbody tr:nth-of-type(even) {
 .dark-bg .risk-unacceptable { background-color: #6d2020 !important; }
 .dark-bg .risk-tolerable { background-color: #7a7322 !important; }
 .dark-bg .risk-acceptable { background-color: #226d22 !important; }
-
 
 .source-note {
     font-style: italic;
@@ -261,7 +263,6 @@ tbody tr:nth-of-type(even) {
 .dark-bg .source-note {
     color: #aaa;
 }
-
 
 /* Estilo para Accordion (Dirty Dozen) */
 .accordion {
@@ -303,7 +304,6 @@ tbody tr:nth-of-type(even) {
     color: var(--text-color-light);
 }
 
-
 /* Rodapé */
 footer {
     text-align: center;
@@ -313,7 +313,6 @@ footer {
     font-size: 0.9rem;
     border-top: 5px solid var(--secondary-color);
 }
-
 
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {
