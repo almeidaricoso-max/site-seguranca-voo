@@ -1,9 +1,15 @@
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
 :root {
-    --primary-color: #003366;
-    --secondary-color: #007bff;
-    --background-color: #f4f4f4;
-    --text-color: #333;
-    --light-text-color: #fff;
+    --primary-color: #003366; /* Azul Escuro (quase preto) */
+    --secondary-color: #FFD700; /* Amarelo Dourado para destaque */
+    --background-light: #f4f4f4; /* Fundo claro para seções */
+    --background-dark: #222831; /* Fundo escuro para seções alternativas */
+    --text-color-light: #EAEAEA; /* Texto claro para fundos escuros */
+    --text-color-dark: #333333; /* Texto escuro para fundos claros */
+    --link-hover-color: #FFECB3; /* Amarelo mais claro para hover */
+    --header-height: 80px;
 }
 
 * {
@@ -13,20 +19,29 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif; /* Fonte principal para o corpo */
     line-height: 1.6;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--background-light);
+    color: var(--text-color-dark);
 }
 
+/* Utilitários */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+/* Cabeçalho */
 header {
     background: var(--primary-color);
-    color: var(--light-text-color);
+    color: var(--text-color-light);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 nav {
@@ -39,10 +54,12 @@ nav {
 }
 
 nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--light-text-color);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary-color); /* Logo em amarelo */
     text-decoration: none;
+    letter-spacing: 1px;
 }
 
 nav ul {
@@ -51,57 +68,159 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 nav a {
-    color: var(--light-text-color);
+    color: var(--text-color-light);
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.95rem;
 }
 
 nav a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Seção Hero Banner (Nova) */
+#hero-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1544776100-3333d027a4d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+    /* Imagem de um hangar com avião - você pode substituir por uma de suas imagens, se preferir! */
+    color: var(--text-color-light);
+    height: 70vh; /* Altura da viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: var(--header-height); /* Ajusta para o cabeçalho fixo */
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente para o texto */
+    border-radius: 10px;
+}
+
+#hero-banner h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+#hero-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color-light);
+}
+
+.btn-saiba-mais {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-saiba-mais:hover {
+    background-color: var(--link-hover-color);
+    transform: translateY(-2px);
+}
+
+/* Seções de Conteúdo */
+.content-section {
+    padding: 6rem 0; /* Mais espaçamento vertical */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.content-section:last-of-type {
+    border-bottom: none;
+}
+
+.dark-bg {
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+}
+
+.dark-bg h2 {
     color: var(--secondary-color);
 }
 
-main {
-    padding-top: 80px;
-}
-
-section {
-    padding: 4rem 2rem;
-    max-width: 1100px;
-    margin: auto;
-    border-bottom: 1px solid #ddd;
-}
-
-section h1, section h2 {
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-#inicio {
+.content-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
     text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
 }
 
+.content-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.content-section ul, .content-section ol {
+    margin-left: 25px;
+    font-size: 1.1rem;
+}
+
+.content-section ul li, .content-section ol li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Pilares */
 .pilares-container {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: center; /* Centraliza os pilares */
+    flex-wrap: wrap; /* Quebra linha em telas menores */
+    gap: 30px; /* Mais espaçamento entre eles */
     margin-top: 2rem;
 }
 
 .pilar {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    flex-basis: 30%;
+    background: #393E46; /* Fundo mais escuro para os pilares em seção escura */
+    color: var(--text-color-light);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra mais pronunciada */
+    flex-basis: calc(33% - 20px); /* Ajuste para 3 pilares por linha */
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#manutencao ul, #fatores-humanos ol {
-    margin-left: 20px;
+.pilar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.pilar h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.pilar p {
+    font-size: 1rem;
+}
+
+
+/* Formulário de Contato */
+#contato .container {
+    max-width: 700px;
 }
 
 #contato form {
@@ -110,29 +229,124 @@ section h1, section h2 {
 }
 
 #contato input, #contato textarea {
-    padding: 0.8rem;
+    padding: 1rem;
     margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    color: var(--text-color-dark);
+    font-size: 1rem;
+}
+
+#contato textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
 #contato button {
-    padding: 0.8rem;
+    padding: 1rem;
     border: none;
     background: var(--primary-color);
-    color: var(--light-text-color);
+    color: var(--text-color-light);
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
 }
 
 #contato button:hover {
     background: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
+/* Rodapé */
 footer {
     text-align: center;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     background: var(--primary-color);
-    color: var(--light-text-color);
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    border-top: 5px solid var(--secondary-color); /* Linha amarela no topo do footer */
+}
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    #hero-banner {
+        height: 80vh;
+    }
+
+    #hero-banner h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero-banner p {
+        font-size: 1rem;
+    }
+
+    .content-section h2 {
+        font-size: 2rem;
+    }
+
+    .pilares-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pilar {
+        flex-basis: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav .logo {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        margin: 5px 5px;
+    }
+
+    #hero-banner h1 {
+        font-size: 2rem;
+    }
+
+    #hero-banner p {
+        font-size: 0.9rem;
+    }
+
+    .btn-saiba-mais {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .content-section {
+        padding: 4rem 0;
+    }
+
+    .content-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .content-section p, .content-section ul li, .content-section ol li {
+        font-size: 0.95rem;
+    }
 }
