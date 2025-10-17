@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
 
 :root {
-    --primary-color: #003366; /* Azul Escuro (quase preto) */
-    --secondary-color: #FFD700; /* Amarelo Dourado para destaque */
-    --background-light: #f4f4f4; /* Fundo claro para seções */
-    --background-dark: #222831; /* Fundo escuro para seções alternativas */
-    --text-color-light: #EAEAEA; /* Texto claro para fundos escuros */
-    --text-color-dark: #333333; /* Texto escuro para fundos claros */
-    --link-hover-color: #FFECB3; /* Amarelo mais claro para hover */
+    --primary-color: #0d2137; 
+    --secondary-color: #FFC107; 
+    --background-light: #ffffff;
+    --background-dark: #1a1a1a;
+    --text-color-light: #f0f0f0; 
+    --text-color-dark: #333333; 
+    --link-hover-color: #FFD54F;
     --header-height: 80px;
 }
 
@@ -18,9 +18,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
 body {
-    font-family: 'Open Sans', sans-serif; /* Fonte principal para o corpo */
-    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.8;
     background-color: var(--background-light);
     color: var(--text-color-dark);
 }
@@ -57,7 +62,7 @@ nav .logo {
     font-family: 'Oswald', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--secondary-color); /* Logo em amarelo */
+    color: var(--secondary-color);
     text-decoration: none;
     letter-spacing: 1px;
 }
@@ -84,23 +89,22 @@ nav a:hover {
     color: var(--link-hover-color);
 }
 
-/* Seção Hero Banner (Nova) */
+/* Seção Hero Banner */
 #hero-banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1544776100-3333d027a4d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-    /* Imagem de um hangar com avião - você pode substituir por uma de suas imagens, se preferir! */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1610642372651-fe6e7bc20934?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
     color: var(--text-color-light);
-    height: 70vh; /* Altura da viewport */
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: var(--header-height); /* Ajusta para o cabeçalho fixo */
+    padding: var(--header-height) 2rem 2rem 2rem;
 }
 
 .hero-content {
     max-width: 800px;
     padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente para o texto */
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
 }
 
@@ -140,12 +144,7 @@ nav a:hover {
 
 /* Seções de Conteúdo */
 .content-section {
-    padding: 6rem 0; /* Mais espaçamento vertical */
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.content-section:last-of-type {
-    border-bottom: none;
+    padding: 6rem 0;
 }
 
 .dark-bg {
@@ -153,7 +152,7 @@ nav a:hover {
     color: var(--text-color-light);
 }
 
-.dark-bg h2 {
+.dark-bg h2, .dark-bg h3 {
     color: var(--secondary-color);
 }
 
@@ -166,101 +165,144 @@ nav a:hover {
     text-transform: uppercase;
 }
 
-.content-section p {
-    font-size: 1.1rem;
+.content-section h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.content-section h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+
+.content-section p, .content-section ul, .content-section ol {
+    margin-bottom: 1.5rem;
 }
 
 .content-section ul, .content-section ol {
-    margin-left: 25px;
-    font-size: 1.1rem;
+    padding-left: 25px;
 }
 
-.content-section ul li, .content-section ol li {
+.content-section ul ul {
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
 
-/* Pilares */
-.pilares-container {
-    display: flex;
-    justify-content: center; /* Centraliza os pilares */
-    flex-wrap: wrap; /* Quebra linha em telas menores */
-    gap: 30px; /* Mais espaçamento entre eles */
-    margin-top: 2rem;
+/* Estilos para Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.pilar {
-    background: #393E46; /* Fundo mais escuro para os pilares em seção escura */
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead th {
+    background-color: var(--primary-color);
     color: var(--text-color-light);
-    padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra mais pronunciada */
-    flex-basis: calc(33% - 20px); /* Ajuste para 3 pilares por linha */
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.pilar:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-.pilar h3 {
     font-family: 'Oswald', sans-serif;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--secondary-color);
-}
-
-.pilar p {
-    font-size: 1rem;
-}
-
-
-/* Formulário de Contato */
-#contato .container {
-    max-width: 700px;
-}
-
-#contato form {
-    display: flex;
-    flex-direction: column;
-}
-
-#contato input, #contato textarea {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #555;
-    border-radius: 8px;
-    background-color: #fcfcfc;
-    color: var(--text-color-dark);
-    font-size: 1rem;
-}
-
-#contato textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-#contato button {
-    padding: 1rem;
-    border: none;
-    background: var(--primary-color);
-    color: var(--text-color-light);
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.1rem;
     text-transform: uppercase;
 }
 
-#contato button:hover {
-    background: var(--secondary-color);
-    color: var(--primary-color);
-    transform: translateY(-2px);
+tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
 }
+
+.dark-bg table {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.dark-bg th, .dark-bg td {
+    border-color: #444;
+}
+
+.dark-bg thead th {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.dark-bg tbody tr {
+    background-color: #2a2a2a;
+}
+.dark-bg tbody tr:nth-of-type(even) {
+    background-color: #333;
+}
+
+
+.risk-unacceptable { background-color: #ffdddd !important; }
+.risk-tolerable { background-color: #fffbdd !important; }
+.risk-acceptable { background-color: #ddffdd !important; }
+
+.dark-bg .risk-unacceptable { background-color: #6d2020 !important; }
+.dark-bg .risk-tolerable { background-color: #7a7322 !important; }
+.dark-bg .risk-acceptable { background-color: #226d22 !important; }
+
+
+.source-note {
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: right;
+    color: #777;
+    margin-top: -1rem;
+}
+.dark-bg .source-note {
+    color: #aaa;
+}
+
+
+/* Estilo para Accordion (Dirty Dozen) */
+.accordion {
+    margin-top: 2rem;
+}
+.accordion details {
+    background: #2a2a2a;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+}
+.accordion summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    outline: none;
+    list-style: none; /* Remove a seta padrão */
+    position: relative;
+    color: var(--secondary-color);
+}
+.accordion summary::-webkit-details-marker {
+    display: none; /* Remove a seta padrão no Chrome/Safari */
+}
+.accordion summary::after {
+    content: '+';
+    position: absolute;
+    right: 1rem;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+.accordion details[open] summary::after {
+    transform: rotate(45deg);
+}
+.accordion p {
+    padding: 0 1rem 1rem 1rem;
+    margin: 0;
+    color: var(--text-color-light);
+}
+
 
 /* Rodapé */
 footer {
@@ -269,7 +311,7 @@ footer {
     background: var(--primary-color);
     color: var(--text-color-light);
     font-size: 0.9rem;
-    border-top: 5px solid var(--secondary-color); /* Linha amarela no topo do footer */
+    border-top: 5px solid var(--secondary-color);
 }
 
 
@@ -291,62 +333,14 @@ footer {
     }
 
     #hero-banner {
-        height: 80vh;
+        min-height: 80vh;
     }
 
     #hero-banner h1 {
         font-size: 2.5rem;
     }
 
-    #hero-banner p {
-        font-size: 1rem;
-    }
-
     .content-section h2 {
         font-size: 2rem;
-    }
-
-    .pilares-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .pilar {
-        flex-basis: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    nav .logo {
-        font-size: 1.5rem;
-    }
-
-    nav ul li {
-        margin: 5px 5px;
-    }
-
-    #hero-banner h1 {
-        font-size: 2rem;
-    }
-
-    #hero-banner p {
-        font-size: 0.9rem;
-    }
-
-    .btn-saiba-mais {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.9rem;
-    }
-
-    .content-section {
-        padding: 4rem 0;
-    }
-
-    .content-section h2 {
-        font-size: 1.8rem;
-    }
-
-    .content-section p, .content-section ul li, .content-section ol li {
-        font-size: 0.95rem;
     }
 }
