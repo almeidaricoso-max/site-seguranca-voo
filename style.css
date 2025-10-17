@@ -122,7 +122,6 @@ section:not(#hero-banner) {
 }
 .pilar { text-align: center; padding: 1.5rem; }
 .pilares-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-#manutencao ul, #fatores-humanos ol { margin-left: 20px; line-height: 2; }
 /* --- Estilo para o fundo da seção de Manutenção --- */
 #manutencao {
     position: relative; /* Necessário para o overlay */
