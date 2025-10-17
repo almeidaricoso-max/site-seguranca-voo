@@ -343,3 +343,41 @@ footer {
         font-size: 2rem;
     }
 }
+/* No final do arquivo style.css */
+
+/* --- ANIMAÇÃO DA AERONAVE --- */
+
+/* Estilo da imagem da aeronave */
+#animated-plane {
+    position: absolute; /* Permite posicionar a imagem livremente dentro do banner */
+    bottom: 20%;      /* Começa a 20% da parte de baixo do banner */
+    width: 150px;       /* Tamanho da aeronave */
+    opacity: 0.5;       /* Deixa a aeronave um pouco transparente para não roubar a cena */
+    animation: fly-across 25s linear infinite; /* Aplica a animação */
+    z-index: 0;         /* Garante que a imagem fique atrás do texto */
+}
+
+/* Definição da animação (keyframes) */
+@keyframes fly-across {
+    /* Ponto de partida: fora da tela, à esquerda */
+    from {
+        transform: translateX(-200px); 
+    }
+    /* Ponto final: fora da tela, à direita */
+    to {
+        transform: translateX(100vw); /* 100vw = 100% da largura da tela */
+    }
+}
+
+/* Ajuste para que o texto do banner fique na frente do avião */
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Pequeno ajuste para telas menores */
+@media (max-width: 768px) {
+    #animated-plane {
+        width: 100px; /* Diminui o avião em telas de celular */
+    }
+}
