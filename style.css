@@ -81,7 +81,7 @@ section h3 { font-family: 'Roboto', sans-serif; font-weight: 700; margin-bottom:
     color: var(--text-color-dark);
     
     /* A MÁGICA ACONTECE AQUI */
-    background-image: linear-gradient(rgba(10, 15, 24, 0.6), rgba(10, 15, 24, 0.8)), url('Lucid_Origin_Tema_Segurana_de_Voo__Preveno__a_melhor_forma_de__0.jpg');
+   background-image: linear-gradient(rgba(10, 15, 24, 0.6), rgba(10, 15, 24, 0.8)), url('AVIÃO NO HANGAR.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Efeito Parallax */
