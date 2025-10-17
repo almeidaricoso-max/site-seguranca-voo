@@ -136,7 +136,7 @@ section:not(#hero-banner) {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(10, 15, 24, 0.85), rgba(10, 15, 24, 0.95)), url('ROTOR DE CAUDA DESMONTADO.jpeg');
+   background-image: linear-gradient(rgba(10, 15, 24, 0.85), rgba(10, 15, 24, 0.95)), url('rotor-background.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Efeito Parallax */
