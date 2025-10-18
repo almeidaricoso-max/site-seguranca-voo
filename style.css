@@ -136,7 +136,7 @@ section:not(#hero-banner) {
     left: 0;
     width: 100%;
     height: 100%;
-   background-image: linear-gradient(rgba(10, 15, 24, 0.85), rgba(10, 15, 24, 0.95)), url('rotor-background.jpeg');
+   background-image: linear-gradient(rgba(10, 15, 24, 0.65), rgba(10, 15, 24, 0.8)), url('rotor-background.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Efeito Parallax */
@@ -157,11 +157,102 @@ section:not(#hero-banner) {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(10, 15, 24, 0.85), rgba(10, 15, 24, 0.95)), url('equipe-emca.jpeg');
+ background-image: linear-gradient(rgba(10, 15, 24, 0.65), rgba(10, 15, 24, 0.8)), url('nova-equipe-emca.jpeg');
     background-size: cover;
-    background-position: center;
+   background-position: 80% center; /* Ajusta o foco para a direita, mostrando mais o homem de costas */
     background-attachment: fixed; /* Efeito Parallax */
     z-index: -1;
     border-radius: 8px; /* Opcional: para bordas arredondadas */
+}
+/* ======================================================= */
+/* --- REGRAS PARA CELULAR (DESIGN RESPONSIVO) --- */
+/* ======================================================= */
+@media (max-width: 768px) {
+
+    /* --- Navegação Aprimorada --- */
+    nav {
+        padding: 0 1rem;
+    }
+
+    nav .logo {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav ul li {
+        margin-left: 0;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem 0;
+    }
+    
+    main {
+        padding-top: 130px;
+    }
+
+    /* --- Tipografia e Conteúdo --- */
+    .hero-content h3 {
+        font-size: 2.8rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 3rem 1.5rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .pilares-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Efeitos Visuais --- */
+    /* Remove o efeito parallax em telemóveis */
+    #hero-banner, #manutencao::before, #fatores-humanos::before {
+        background-attachment: scroll;
+    }
+
+    /* NOVO CÓDIGO AQUI: Ajusta as imagens de fundo para serem totalmente visíveis */
+    #manutencao::before,
+    #fatores-humanos::before {
+        background-size: contain; /* Garante que a imagem inteira seja visível */
+        background-repeat: no-repeat; /* Evita que a imagem se repita */
+    }
+
+    /* --- Rodapé --- */
+    footer {
+        font-size: 0.9rem;
+    }
+}
+    /* --- Efeitos Visuais --- */
+    /* Remove o efeito parallax em celulares, que pode causar lentidão */
+    #hero-banner, #manutencao::before, #fatores-humanos::before {
+        background-attachment: scroll;
+        /* Ajusta as imagens de fundo para serem totalmente visíveis no telemóvel */
+    #manutencao::before,
+    #fatores-humanos::before {
+        background-size: contain; /* Garante que a imagem inteira seja visível */
+        background-repeat: no-repeat; /* Evita que a imagem se repita no espaço vazio */
+    }
+    }
+
+    /* --- Rodapé --- */
+    footer {
+        font-size: 0.9rem; /* Fonte do rodapé mais sutil */
+    }
 }
 footer { text-align: center; padding: 2.5rem 0; background: var(--background-dark); color: #888; }
