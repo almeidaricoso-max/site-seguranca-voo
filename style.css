@@ -254,6 +254,19 @@ section:not(#hero-banner) {
     footer {
         font-size: 0.9rem; /* Fonte do rodapé mais sutil */
     }
+
+/* --- Estilo para a nova frase de impacto --- */
+.impact-phrase {
+    margin-top: 3rem; /* Aumenta o espaço acima */
+    padding-top: 2rem; /* Adiciona espaço entre a linha e o texto */
+    border-top: 1px solid rgba(255, 193, 7, 0.3); /* Adiciona uma linha amarela sutil */
+    font-family: 'Roboto', sans-serif; /* Usa a fonte de maior impacto */
+    font-size: 1.8rem; /* Aumenta o tamanho da fonte */
+    font-weight: 700; /* Deixa o texto em negrito */
+    font-style: italic;
+    color: var(--primary-color); /* Mantém a cor amarela de destaque */
+    max-width: 600px; /* Aumenta um pouco a largura máxima */
+    line-height: 1.4; /* Melhora o espaçamento entre linhas se o texto quebrar */
 }
 /* --- Estilo para a nova seção final com o logo da EMCA --- */
 #emca-final-section {
@@ -284,34 +297,5 @@ section:not(#hero-banner) {
     background-attachment: fixed;
     z-index: -1;
     opacity: 0.4; /* Deixa o logo ainda mais sutil */
-}
-
-/* --- Estilo para a frase de impacto --- */
-.impact-phrase {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 193, 7, 0.3);
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    font-style: italic;
-    color: var(--primary-color);
-    max-width: 600px;
-    line-height: 1.4;
-}
-
-/* --- Estilo para a nova frase de impacto --- */
-.impact-phrase {
-    margin-top: 3rem; /* Aumenta o espaço acima */
-    padding-top: 2rem; /* Adiciona espaço entre a linha e o texto */
-    border-top: 1px solid rgba(255, 193, 7, 0.3); /* Adiciona uma linha amarela sutil */
-    font-family: 'Roboto', sans-serif; /* Usa a fonte de maior impacto */
-    font-size: 1.8rem; /* Aumenta o tamanho da fonte */
-    font-weight: 700; /* Deixa o texto em negrito */
-    font-style: italic;
-    color: var(--primary-color); /* Mantém a cor amarela de destaque */
-    max-width: 600px; /* Aumenta um pouco a largura máxima */
-    line-height: 1.4; /* Melhora o espaçamento entre linhas se o texto quebrar */
-}
 }
 footer { text-align: center; padding: 2.5rem 0; background: var(--background-dark); color: #888; }
