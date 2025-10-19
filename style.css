@@ -255,4 +255,33 @@ section:not(#hero-banner) {
         font-size: 0.9rem; /* Fonte do rodapé mais sutil */
     }
 }
+/* --- Estilo para a nova seção final com o logo da EMCA --- */
+#emca-final-section {
+    position: relative;
+    z-index: 1;
+    color: var(--text-color-dark);
+    text-align: center;
+    min-height: 400px; /* Garante uma altura mínima para a imagem ser vista */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#emca-final-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente mais transparente para o logo ficar visível */
+    background-image: linear-gradient(rgba(10, 15, 24, 0.8), rgba(10, 15, 24, 0.9)), url('logo-emca-completo.jpg');
+    background-size: contain; /* Garante que o logo inteiro seja visível */
+    background-position: center;
+    background-repeat: no-repeat; /* Evita que o logo se repita */
+    background-attachment: fixed;
+    z-index: -1;
+    opacity: 0.7; /* Deixa o logo um pouco mais sutil */
+}
 footer { text-align: center; padding: 2.5rem 0; background: var(--background-dark); color: #888; }
