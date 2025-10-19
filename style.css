@@ -70,7 +70,6 @@ section h2 {
 }
 section h3 { font-family: 'Roboto', sans-serif; font-weight: 700; margin-bottom: 1rem; color: var(--primary-color); }
 
-/* --- A NOVA SEÇÃO INICIAL --- */
 #hero-banner {
     display: flex;
     align-items: center;
@@ -79,12 +78,11 @@ section h3 { font-family: 'Roboto', sans-serif; font-weight: 700; margin-bottom:
     padding: 2rem;
     text-align: center;
     color: var(--text-color-dark);
-    
-    /* A MÁGICA ACONTECE AQUI */
-   background-image: linear-gradient(rgba(10, 15, 24, 0.6), rgba(10, 15, 24, 0.8)), url('AVIÃO NO HANGAR.jpg');
+    /* NOME DO ARQUIVO CORRIGIDO PARA EVITAR PROBLEMAS */
+    background-image: linear-gradient(rgba(10, 15, 24, 0.6), rgba(10, 15, 24, 0.8)), url('hangar-background.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efeito Parallax */
+    background-attachment: fixed;
 }
 
 .hero-content h3 {
@@ -114,7 +112,6 @@ section h3 { font-family: 'Roboto', sans-serif; font-weight: 700; margin-bottom:
 }
 .btn:hover { transform: translateY(-3px); }
 
-/* Estilo das outras seções */
 section:not(#hero-banner) {
     background-color: var(--background-light);
     border-top: 1px solid #333;
@@ -122,55 +119,71 @@ section:not(#hero-banner) {
 }
 .pilar { text-align: center; padding: 1.5rem; }
 .pilares-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+
 /* --- Estilo para o fundo da seção de Manutenção --- */
-#manutencao {
-    position: relative; /* Necessário para o overlay */
-    z-index: 1;
-    color: var(--text-color-dark); /* Deixa o texto branco para contrastar */
-}
-
+#manutencao { position: relative; z-index: 1; color: var(--text-color-dark); }
 #manutencao::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-   background-image: linear-gradient(rgba(10, 15, 24, 0.65), rgba(10, 15, 24, 0.8)), url('rotor-background.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Efeito Parallax */
-    z-index: -1;
-    border-radius: 8px; /* Opcional: para bordas arredondadas */
-}
-/* --- Estilo para o fundo da seção de Fatores Humanos --- */
-#fatores-humanos {
-    position: relative; /* Necessário para o overlay */
-    z-index: 1;
-    color: var(--text-color-dark); /* Deixa o texto branco para contrastar */
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(10, 15, 24, 0.65), rgba(10, 15, 24, 0.8)), url('rotor-background.jpeg');
+    background-size: cover; background-position: center; background-attachment: fixed; z-index: -1; border-radius: 8px;
 }
 
+/* --- Estilo para o fundo da seção de Fatores Humanos --- */
+#fatores-humanos { position: relative; z-index: 1; color: var(--text-color-dark); }
 #fatores-humanos::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(10, 15, 24, 0.65), rgba(10, 15, 24, 0.8)), url('nova-equipe-emca.jpeg');
+    background-size: cover; background-position: 80% center; background-attachment: fixed; z-index: -1; border-radius: 8px;
+}
+
+/* --- Estilo para a nova seção final com o logo da EMCA --- */
+#emca-final-section {
+    position: relative;
+    z-index: 1;
+    color: var(--text-color-dark);
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.5rem;
+}
+
+#emca-final-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
- background-image: linear-gradient(rgba(10, 15, 24, 0.65), rgba(10, 15, 24, 0.8)), url('nova-equipe-emca.jpeg');
-    background-size: cover;
-   background-position: 80% center; /* Ajusta o foco para a direita, mostrando mais o homem de costas */
-    background-attachment: fixed; /* Efeito Parallax */
+    background-image: linear-gradient(rgba(10, 15, 24, 0.9), rgba(10, 15, 24, 0.95)), url('logo-emca-completo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     z-index: -1;
-    border-radius: 8px; /* Opcional: para bordas arredondadas */
+    opacity: 0.4;
 }
+
+/* --- Estilo para a nova frase de impacto --- */
+.impact-phrase {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--primary-color);
+    max-width: 500px;
+}
+
 /* ======================================================= */
 /* --- REGRAS PARA CELULAR (DESIGN RESPONSIVO) --- */
 /* ======================================================= */
 @media (max-width: 768px) {
 
-    /* --- Navegação Aprimorada --- */
     nav {
+        flex-direction: column;
+        gap: 15px;
         padding: 0 1rem;
     }
 
@@ -198,7 +211,6 @@ section:not(#hero-banner) {
         padding-top: 130px;
     }
 
-    /* --- Tipografia e Conteúdo --- */
     .hero-content h3 {
         font-size: 2.8rem;
         line-height: 1.2;
@@ -220,92 +232,15 @@ section:not(#hero-banner) {
         grid-template-columns: 1fr;
     }
 
-    /* --- Efeitos Visuais --- */
-    /* Remove o efeito parallax em telemóveis */
-    #hero-banner, #manutencao::before, #fatores-humanos::before {
+    #hero-banner, #manutencao::before, #fatores-humanos::before, #emca-final-section::before {
         background-attachment: scroll;
     }
 
-    /* NOVO CÓDIGO AQUI: Ajusta as imagens de fundo para serem totalmente visíveis */
     #manutencao::before,
     #fatores-humanos::before {
-        background-size: contain; /* Garante que a imagem inteira seja visível */
-        background-repeat: no-repeat; /* Evita que a imagem se repita */
-    }
-
-    /* --- Rodapé --- */
-    footer {
-        font-size: 0.9rem;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 }
-    /* --- Efeitos Visuais --- */
-    /* Remove o efeito parallax em celulares, que pode causar lentidão */
-    #hero-banner, #manutencao::before, #fatores-humanos::before {
-        background-attachment: scroll;
-        /* Ajusta as imagens de fundo para serem totalmente visíveis no telemóvel */
-    #manutencao::before,
-    #fatores-humanos::before {
-        background-size: contain; /* Garante que a imagem inteira seja visível */
-        background-repeat: no-repeat; /* Evita que a imagem se repita no espaço vazio */
-    }
-    }
 
-    /* --- Rodapé --- */
-    footer {
-        font-size: 0.9rem; /* Fonte do rodapé mais sutil */
-    }
-}
-/* --- Estilo para a nova seção final com o logo da EMCA --- */
-#emca-final-section {
-    position: relative;
-    z-index: 1;
-    color: var(--text-color-dark);
-    text-align: center;
-    min-height: 400px; /* Garante uma altura mínima para a imagem ser vista */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-/* --- Estilo para a nova seção final com o logo da EMCA --- */
-#emca-final-section {
-    position: relative;
-    z-index: 1;
-    color: var(--text-color-dark);
-    text-align: center;
-    min-height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem 1.5rem; /* Garante bom espaçamento no celular */
-}
-
-#emca-final-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(10, 15, 24, 0.9), rgba(10, 15, 24, 0.95)), url('logo-emca-completo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    z-index: -1;
-    opacity: 0.4; /* Deixa o logo ainda mais sutil */
-}
-
-/* --- Estilo para a nova frase de impacto --- */
-.impact-phrase {
-    margin-top: 2.5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    font-style: italic;
-    color: var(--primary-color); /* Usa a cor amarela de destaque */
-    max-width: 500px;
-}
-
-}
 footer { text-align: center; padding: 2.5rem 0; background: var(--background-dark); color: #888; }
