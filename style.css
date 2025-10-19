@@ -299,20 +299,4 @@ section:not(#hero-banner) {
     z-index: -1;
     /* OPACIDADE REMOVIDA DAQUI PARA CONTROLAR APENAS NO GRADIENTE */
 }
-
-/* --- Estilo para a nova frase de impacto --- */
-.impact-phrase {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 193, 7, 0.3);
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    font-style: italic;
-    color: var(--primary-color);
-    max-width: 600px;
-    line-height: 1.4;
-
-
-}
 footer { text-align: center; padding: 2.5rem 0; background: var(--background-dark); color: #888; }
